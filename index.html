@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Hamdan</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background: linear-gradient(135deg, #EAF4FF, #F2F8FF);
+  color:#5a2a3c;
+  overflow-x:hidden;
+}
+
+/* FLOATING HEARTS */
+.heart{
+  position:fixed;
+  bottom:-20px;
+  font-size:20px;
+  animation:floatUp linear forwards;
+}
+@keyframes floatUp{
+  to{transform:translateY(-110vh);opacity:0}
+}
+
+/* HERO */
+header{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+header h1{
+  font-family:'Playfair Display',serif;
+  font-size:3.5rem;
+  color:#b8326a;
+}
+header p{
+  margin-top:15px;
+  font-size:1.3rem;
+}
+
+/* SECTION */
+section{
+  max-width:1100px;
+  margin:auto;
+  padding:80px 20px;
+}
+.card{
+  background:rgba(255,255,255,0.88);
+  border-radius:16px;
+  padding:45px;
+  margin-bottom:50px;
+  box-shadow:0 20px 40px rgba(184,50,106,0.15);
+}
+
+/* HEADING BUTTON */
+.love-btn{
+  font-family:'Playfair Display',serif;
+  font-size:2rem;
+  color:#b8326a;
+  background:none;
+  border:2px solid #b8326a;
+  border-radius:50px;
+  padding:10px 30px;
+  cursor:pointer;
+}
+
+/* HUG POP */
+.hug{
+  position:absolute;
+  font-size:28px;
+  animation:hugPop 1.8s ease forwards;
+}
+@keyframes hugPop{
+  0%{transform:scale(0);opacity:0}
+  30%{transform:scale(1.3);opacity:1}
+  100%{transform:translateY(-80px);opacity:0}
+}
+
+/* GIFT */
+.gift-options label{
+  display:block;
+  margin-bottom:15px;
+  font-size:1.1rem;
+}
+.submit-btn{
+  margin-top:20px;
+  padding:10px 35px;
+  border-radius:30px;
+  border:none;
+  background:#b8326a;
+  color:white;
+  font-size:1rem;
+  cursor:pointer;
+}
+
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.4);
+  align-items:center;
+  justify-content:center;
+  z-index:999;
+}
+.modal-box{
+  background:#fff0f6;
+  padding:40px 50px;
+  border-radius:20px;
+  text-align:center;
+  animation:popIn .4s ease;
+}
+@keyframes popIn{
+  from{transform:scale(.7);opacity:0}
+  to{transform:scale(1);opacity:1}
+}
+.modal-box h3{
+  font-family:'Playfair Display',serif;
+  color:#b8326a;
+  font-size:2rem;
+}
+.close-btn{
+  margin-top:25px;
+  padding:8px 30px;
+  border-radius:25px;
+  border:none;
+  background:#b8326a;
+  color:white;
+  cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+  background:#b8326a;
+  color:white;
+  text-align:center;
+  padding:30px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<header>
+  <div>
+
+    <h1>HAPPY BIRTHDAY HAMDAN</h1>
+    <p>You Are My Special One!!!</p>
+
+    <!-- Ivide Thodu just below subtitle -->
+    <h2 style="
+      margin-top:20px;
+      font-family:'Playfair Display',serif;
+      color:#4A7EBB;
+    ">
+    </h2>
+    <button class="love-btn" onclick="showHugs(this)"> Ivide Thodu
+    </button>
+  </div>
+</header>
+  </div>
+</header>
+
+<section>
+<!-- MID PARAGRAPH -->
+<div class="card mid-choice">
+  <p class="mid-text">
+    Inkki anne vaynkara vaynkara vaynkara ishttaaa.
+    Inkki anne kalyanam kaych kuttyalle ayytt vayasaayi marikkum
+    vere jeevikanam 🫂. Koode ndaavule ellathinum. 
+    Utherathinaayi edhengilum option select cheyyu.
+  </p>
+
+    <div class="yes-options">
+      <label>
+        <input type="radio" name="yesChoice" value="YES" required>
+        YES
+      </label>
+
+      <label>
+        <input type="radio" name="yesChoice" value="YES, Ofcourse">
+        YES, Ofcourse
+      </label>
+    </div>
+</div>
+
+  <!-- GIFT SECTION -->
+  <div class="card">
+    <h2 style="font-family:'Playfair Display';color:#b8326a">
+      What Gift You Want?
+    </h2>
+
+    <form onsubmit="return openModal()">
+      <div class="gift-options">
+        <label><input type="radio" name="gift" required> KISS</label>
+        <label><input type="radio" name="gift"> HUG</label>
+        <label><input type="radio" name="gift"> GAME</label>
+      </div>
+      <button class="submit-btn">Submit</button>
+    </form>
+  </div>
+
+  <!-- FINAL MESSAGE -->
+  <div class="card">
+    <p>
+      Janmadinam Ashamsakall paranju but treat venam
+      so endhelum order aakki thaayo.
+    </p>
+  </div>
+
+</section>
+
+<footer>
+ Ninkk vendi undaakkiya, Ninte Swontham SANIYA 💗
+</footer>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <h3 id="modalText">Illya Therula 💗</h3>
+    <button class="close-btn" onclick="closeModal()">Try Again 😌</button>
+  </div>
+</div>
+
+<!-- SOUND -->
+<audio id="popSound">
+  <source src="https://assets.mixkit.co/sfx/preview/mixkit-soft-pop-button-2568.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+let submitCount = 0;
+
+/* HEARTS */
+setInterval(()=>{
+  const heart=document.createElement("div");
+  heart.className="heart";
+  heart.innerHTML="💗";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.animationDuration="6s";
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),6000);
+},400);
+
+function showHugs(btn){
+  let count = 0;
+  const totalHugs = 5; // change to 4 if you want
+
+  const interval = setInterval(() => {
+    const hug = document.createElement("div");
+    hug.className = "hug";
+    hug.innerHTML = "🫂";
+
+    const rect = btn.getBoundingClientRect();
+    hug.style.left = rect.left + rect.width / 2 + "px";
+    hug.style.top = rect.top - 10 + window.scrollY + "px";
+
+    document.body.appendChild(hug);
+
+    setTimeout(() => hug.remove(), 1800);
+
+    count++;
+    if(count >= totalHugs){
+      clearInterval(interval);
+    }
+  }, 350); // delay between hugs
+}
+
+/* MODAL LOGIC */
+function openModal(){
+  submitCount++;
+
+  const text=document.getElementById("modalText");
+
+  if(submitCount < 3){
+    text.innerHTML="Illya Therula 💗";
+  } else {
+    text.innerHTML="Thalkalam Iy Vid, I Will Decide Your Gift😌💗";
+  }
+
+  document.getElementById("modal").style.display="flex";
+  document.getElementById("popSound").play();
+  return false;
+}
+
+function closeModal(){
+  document.getElementById("modal").style.display="none";
+}
+</script>
+
+</body>
+</html>
